@@ -1,0 +1,323 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DNAWebServices.SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %>- My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" /> 
+    <link href="~/Content/slidebanner.css" rel="stylesheet" /> 
+          <%--      	 <script src="../jQuery/js/jquery-1.8.3.js"></script>
+	<script src="../jQuery/js/jquery-ui-1.9.2.custom.js"></script>
+
+ 	<script src="../jQuery/jquery-1.6.2.min.js"></script> 
+    	<script src="../jQuery/jquery-ui-1.8.10.offset.datepicker.min.js"></script>
+<link href="../jQuery/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" />    
+        <%--  <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>--%>
+    
+    <link rel="stylesheet" href="~/jScripts/accordionmenu.css" type="text/css" media="screen" />
+            <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+                	 <script src="~/jQuery/js/jquery-1.8.3.js"></script>
+	<script src="~/jQuery/js/jquery-ui-1.9.2.custom.js"></script>
+
+ 	<script src="~/jQuery/jquery-1.6.2.min.js"></script> 
+    	<script src="~/jQuery/jquery-ui-1.8.10.offset.datepicker.min.js"></script>
+<link href="~/jQuery/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" /> 
+   
+  
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">        
+      <%--  <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>--%>
+    </asp:PlaceHolder>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+     
+   
+    <style>
+        html body {
+           border:none; margin:0px; padding:0px;
+            height:100%;
+           
+           
+        }
+        #body {
+                    border:none; margin:0px; padding:0px !important;
+            height:100%;
+        }
+    </style>
+   
+      
+</head>
+<body  style="border:none; margin:0px; padding:0px">
+
+
+    <form id="Form1" runat="server"   style="border:none; margin:0px; padding:0px">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+
+    
+    <header>
+        <div class="content-wrapper">
+            <div>
+            <table style="width:100%;" cellpadding="0" cellspacing="0">
+                
+                <tr>                    
+                    <td style="text-align:left; width:20%">
+                        &nbsp;<a href="SignOn.aspx"><img alt="" src="/Images/DNALogo.png" border="0" /></a></td>
+                    <td style="width:40%">&nbsp;</td>
+                    <td style="text-align:right; padding-right:10px;">
+                      
+                        <img alt=""src="/Images/SheraLogo.png" /></td>
+                </tr>
+                
+                <tr>                    
+                    <td style="text-align:left; width:20%">
+                        &nbsp;</td>
+                    <td style="width:40%">&nbsp;</td>
+                    <td style="text-align:right; width:40%">
+                        &nbsp;<asp:Image ID="Image1" runat="server" ImageAlign="AbsBottom" ImageUrl="~/Images/iconhome.png" Width="30px" />
+ <asp:LinkButton ID="lbMusername0" runat="server" CssClass="lbtmenusmall"  Font-Underline="false"  Text="กลับสู่หน้าหลัก" OnClick="lbMusername0_Click"></asp:LinkButton>
+                                  
+
+                        &nbsp;<asp:Image ID="Image2" runat="server" ImageAlign="AbsBottom" ImageUrl="~/Images/iconlogout.png" Width="30px" />
+ <asp:LinkButton ID="lbMusername1" runat="server" CssClass="lbtmenusmall"  Font-Underline="false"  Text="ออกจากระบบ" OnClick="lbMusername1_Click"></asp:LinkButton>
+                                  
+
+                        </td>
+                </tr>
+                
+            </table>
+                </div>
+            </div>
+   
+        <table style="width:100%;" cellpadding="0" cellspacing="0">
+                        
+            <tr >
+                <td id="MenuAgent" runat="server" style="background-color:#0c9e4b; width:98%">
+                <nav id="nav">
+	                <ul id="navigation">
+                        <%--      <script type="text/javascript" src="../jQuery/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="../jQuery/jquery-1.4.4.min.js"></script>
+    <script type='text/javascript' src='../jQuery/blue/js/jquery-1.6.2.min.js'></script>
+    <script type='text/javascript' src='../jQuery/blue/js/jquery-ui-1.8.16.custom.min.js'></script>
+    <script type="text/javascript" src="../jQuery/jquery-ui-1.8.10.offset.datepicker.min.js"></script>--%>
+		                <li><a href="./MenuSalesRecords.aspx" class="first" style="font-size:16px">บันทึกขายสินค้า <br /> <small style="color:#00ff90">บันทึก/แก้ไข รายการขายสินค้า</small></a>
+			                <ul>
+ 
+				                <li><a href="./AgentAddOrde.aspx">บันทึกรายการขายสินค้า</a></li>
+				                <li><a href="./AgentEditOrder.aspx">แก้ไขข้อมูลขาย (เพิ่ม/ลด)</a></li>				                		
+				                <li><a href="./AgentImportOrder.aspx">นำเข้าข้อมูลขาย</a></li>
+			                </ul>
+		                </li>
+		                <li><a href="./MenuReward.aspx" style="font-size:16px">ตรวจสอบคะแนน <br /><small style="color:#00ff90">แสดงรายละเอียดคะแนน</small></a>
+		                    <ul>
+                        
+
+				                <li><a href="./CheckPointOwnerA.aspx">คะแนนส่วนตัว</a></li>
+				                <li><a href="./CheckPointOwnerS.aspx">คะแนนร้านค้าย่อย</a></li>
+				                <li><a href="./CheckPointOwnerC.aspx">คะแนนผู้รับเหมา/โครงการ</a></li>				
+			                </ul>				
+		                </li>
+                        <li><a href="MenuAgentReport.aspx" style="font-size:16px">รายงานซื้อขาย <br /><small style="color:#00ff90">ข้อมูลซื้อเข้า/ขายออก</small></a>
+                   
+
+
+                            <ul>
+				                <li><a href="./OrderOwner.aspx">รายการสั่งซื้อสินค้าจากบริษัท</a></li>
+				                <li><a href="./OrderSubAgent.aspx">รายการขายสินค้า ร้านค้าย่อย</a></li>
+                                <li><a href="./OrderContractor.aspx">รายการขายสินค้า ผู้รับเหมา/โครงการ</a></li>
+                                <li><a href="./StockList.aspx">จำนวนสินค้าคงเหลือ</a></li>
+								
+			                </ul>				
+		                </li>
+                        <li><a href="MenubyReward.aspx" style="font-size:16px">โปรโมชั่นแลกคะแนน <br /><small style="color:#00ff90">สิทธิพิเศษเฉพาะสมาชิก ดีเอ็นเอ</small></a>
+          
+
+
+                            <ul>
+				                <li><a href="./AgentRedemption.aspx">รายการแลกคะแนน</a></li>
+				                <li><a href="./RewardHistory.aspx">รายงานการแลกคะแนน</a></li>
+                                <li><a href="./AgentAwardsA.aspx">แลกคะแนน</a></li>
+								
+			                </ul>				
+		                </li>
+                        
+		                <%--<li><a href="./MenuAgentWholesale.aspx" class="first">หน้าหลัก</a></li>--%>
+                        <li><a href="./NewsList.aspx" style="font-size:16px">ข่าวสารและโปรโมชั่น <br /><small style="color:#00ff90">ทุกไอเท็มสุดฮิต ที่ห้ามพลาด</small></a>
+                            <%--<li><a href="./Comment.aspx">ข้อเสนอแนะ</a></li>--%>
+		                </li>
+		                <li><a href="#" style="font-size:16px">ดาวน์โหลดคู่มือ/แบบฟอร์ม<br /><small style="color:#00ff90">ฟังก์ชั่นที่ทำให้ชีวิตท่านง่ายขึ้น</small></a>
+                            <ul>
+ 
+
+
+				                <li><a href="./DownloadManual.aspx">อุปกรณ์ส่งเสริมการขาย</a></li>
+				          
+                                <li><a href="./DownloadDocument.aspx">แบบฟอร์มต่างๆ</a></li>
+                                <li><a href="./DownloadNew.aspx">วารสารเฌอร่า</a></li>
+                      
+								 
+
+			                </ul>
+		                </li>
+                          <li><a href="./NewsList.aspx" style="font-size:16px">คู่มือสมาชิก ดีเอ็นเอ<br /><small style="color:transparent">xx</small></a>
+                                   <ul>
+ 
+                                       
+
+
+
+
+				                <li><a href="./TermandCondition.aspx">ข้อกำหนดและเงื่อนไข</a></li>
+				          
+                                <li><a href="./DownloadManual.aspx">คู่มือการใช้งานเวบไซต์</a></li>
+                            
+                      
+								 
+
+			                </ul>
+                          
+		                </li>
+                             <li><a href="./CommentMenu.aspx" style="font-size:16px">ข้อเสนอแนะ /สอบถามข้อมูล<br /><small style="color:transparent">xx</small></a>
+                          
+                          
+		                </li>
+                             <li><a href="./ContactUs.aspx"   class="last" style="font-size:16px">ติดต่อเรา <br /><small style="color:transparent">xx</small></a>
+                          
+		                </li>
+                        
+		                <%--<ul>
+				                <li><a href="#">เงื่อนไขการสมัครสมาชิก</a></li>
+				                <li><a href="#">เงื่อนไขการแลกรางวัล</a></li>                               
+								
+			                </ul>--%>
+	                </ul>
+                </nav>
+            </td>
+        </tr>
+
+        </table>
+    </header>
+ 
+        <table style="width:100%; height:100%; vertical-align:top; margin:0;" cellpadding="0" cellspacing="0"  width="100%" >
+            <tr>
+                <td style="width:20%; background-color:#c6c6c6; border:0px; vertical-align:top;">
+                
+                    <div style="width:100%; height:auto; text-align :left ">
+
+                        <div class="divMenuList"> 
+                                  
+                            &nbsp; <img alt=""  style="height:30px; vertical-align:middle"   src="/Content/images/icon/i_m_user.png" />
+ <asp:LinkButton ID="lbMusername" runat="server" CssClass="lbtmenu"  Font-Underline="false"  Text="ข้อมูลส่วนตัวและข้อมูลลูกค้า " OnClick="lbMusername_Click">
+                   </asp:LinkButton>
+                        </div>
+                             <div class="divMenuList" >&nbsp;&nbsp;<img alt="" style="height:30px; vertical-align:middle"  src="/Content/images/icon/i_m_resumet.png "  />
+                               <asp:LinkButton ID="LinkButton4" runat="server" CssClass="lbtmenu" Font-Underline="false" OnClick="LinkButton4_Click">
+                                 เพิ่ม/แก้ไข ข้อมูลลูกค้า</asp:LinkButton>
+                                </div>
+                     
+                              <div class="divMenuList"> &nbsp;&nbsp;<img alt="" style="height:30px; vertical-align:middle"  src="/Content/images/icon/i_m_cpwd.png" />
+ <asp:LinkButton ID="bltnChangePassword" runat="server" CssClass="lbtmenu" Font-Underline="false" PostBackUrl="~/FrontWeb/ChangePassword.aspx">
+                                 เปลี่ยนรหัสผ่าน</asp:LinkButton>
+                                  
+                              </div>
+                                <div class="divMenuList" style="border-bottom:none">&nbsp;&nbsp;<img alt=""style="height:30px; vertical-align:middle" src="/Content/images/icon/i_m_exit.png" />
+ <asp:LinkButton ID="btnLogout1" runat="server" CssClass="lbtmenu" Font-Underline="false" OnClick="btnLogout1_Click">
+                                 ออกจากระบบ</asp:LinkButton>
+                                  
+                                </div>
+                        <table  style="width:100%">
+                            <tr><td align="center">
+                                    <div style=" text-align:center ;" class="pricebox"   align="center">    <br /><br />
+                        <asp:Label ID="Label8" CssClass="lbpoint" Font-Size="36px" runat="server" Text="2,000"></asp:Label>&nbsp;
+                        <asp:Label ID="Label9" CssClass="lbpoint" Font-Size="16px" runat="server" Text="คะแนน"></asp:Label>
+                      <br />
+                        <asp:Label ID="Label10" CssClass="lbpoint" Font-Size="13px" runat="server" Text="ข้อมูลล่าสุด :"></asp:Label>&nbsp;
+                        <asp:Label ID="Label11" CssClass="lbpoint" Font-Size="13px" runat="server" Text="วันที่ 7 ธันวาคม 2558"></asp:Label>
+                      <br />
+                        <asp:ImageButton ID="ImageButton2" Width="210px" runat="server" ImageUrl="~/Content/images/ibtpoint.png" BackColor="#ef8d3f" BorderWidth="0" OnClick="ImageButton2_Click"  />
+                  </div>
+                                </td></tr>
+                                    <tr><td align="center">
+                                         <br />
+                                         <asp:Button ID="Button6" CssClass="btnOrange" runat="server" Width="230px" Text="สมัครร้านค้าย่อย" OnClick="Button6_Click" />
+                                    <br />  <br />  
+                                <asp:Button ID="Button1" CssClass="btnOrange" runat="server" Width="230px" Text="สมัครผู้รับเหมา/โครงการ" OnClick="Button1_Click" />
+
+                                </td></tr>
+                        </table>
+
+               
+                                    <br />
+                        	
+              
+                    <br />
+                                        
+           
+                            
+                </td>
+                <td style="height:auto;  padding:10px;  margin:0; vertical-align:top; ">
+                    <div style="float:right;  text-align:right ;width:100%;padding-right:0px; font-family:Shera; font-size:12pt"> ยินดีต้อนรับคุณ <span style="color:#ff6a00">
+                        ร้านใจดี การค้า</span></div>
+               
+                    <div style="float:left; width:100%; padding-left:0px; padding-right:0px;">
+                        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" >
+
+                        </asp:ContentPlaceHolder>
+                         
+                        <asp:ContentPlaceHolder runat="server"  ID="MainContent" ></asp:ContentPlaceHolder>
+                       
+                    </div>
+                   
+                    
+                </td>
+                
+            </tr>
+       
+           
+           
+            <tr>
+                <td  colspan="2" class="tdfooter">
+ 
+      
+ 
+            
+                <table style="width:100%;  " cellpadding="0" cellspacing="0" border="0">
+               
+                    <tr>
+                        <td style="text-align:left; width:5%; padding-left:10px">
+                            <a href="./ContactUs.aspx" ><img alt="" style="height:55px ; width:55px"  src="/Content/images/icon/i_f_call.png" border="0" title="ติดต่อเรา" /></a>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label1" CssClass="lbtxtfoot" runat="server" Text="ติดต่อ ดีเอ็นเอ วีแคร์ จันทร์ - ศุกร์ เวลา 8.00 - 17.30 น."></asp:Label>
+                            <br />
+                            <asp:Label ID="Label2" CssClass="lbtxtfoot1" runat="server" Text="Tel. 02 289 9836, 02 289 9839, Fax. 02 291 4130, Email : dna@sherasolution.com  www.sherasolution.com"></asp:Label>
+                        </td>
+                        <td style="text-align:right;width:25%;">
+                            <img alt="" style="height:70px"  src="/Content/images/icon/i_f_linechat.png" />&nbsp;                            
+                            <a href="QRCode.aspx" target="_blank" class="csslinkf"  ><img alt="" style="border:0px;height:70px"  src="/Content/images/icon/i_f_line1.png" /></a>
+                            
+                        </td>
+                    </tr>
+            
+                </table>
+
+            
+
+  
+                </td>
+                
+            </tr>
+       
+           
+           
+        </table>
+ 
+    </form>
+</body>
+</html>

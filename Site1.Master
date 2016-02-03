@@ -1,0 +1,186 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="DNAWebServices.Site1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" /> 
+    <link href="~/Content/slidebanner.css" rel="stylesheet" /> 
+    
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">        
+    <%--    <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>--%>
+    </asp:PlaceHolder>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+    <link rel="stylesheet" href="Scripts/accordionmenu.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+                	 <script src="~/jQuery/js/jquery-1.8.3.js"></script>
+	<script src="~/jQuery/js/jquery-ui-1.9.2.custom.js"></script>
+
+ 	<script src="~/jQuery/jquery-1.6.2.min.js"></script> 
+    	<script src="~/jQuery/jquery-ui-1.8.10.offset.datepicker.min.js"></script>
+<link href="~/jQuery/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" /> 
+   
+    
+     <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // Store variables
+
+            var accordion_head = $('.accordion > li > a'),
+                accordion_body = $('.accordion li > .sub-menu');
+
+            // Open the first tab on load
+
+            accordion_head.first().addClass('active').next().slideDown('normal');
+
+            // Click function
+
+            accordion_head.on('click', function (event) {
+
+                // Disable header links
+
+                event.preventDefault();
+
+                // Show and hide the tabs on click
+
+                if ($(this).attr('class') != 'active') {
+                    accordion_body.slideUp('normal');
+                    $(this).next().stop(true, true).slideToggle('normal');
+                    accordion_head.removeClass('active');
+                    $(this).addClass('active');
+                }
+
+            });
+
+        });
+
+    </script>
+     
+     <style>
+        html {
+           border:none; margin:0px; padding:0px;
+            height:100%;
+           
+           
+        }
+        #body {
+                    border:none; margin:0px; padding:0px !important;
+            height:100%;
+        }
+    </style>
+
+   
+     
+</head>
+<body>
+    <form id="Form1" runat="server" class="wrapper">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+    <header>
+        <div class="content-wrapper">
+            <div>
+            <table style="width:100%;" cellpadding="0" cellspacing="0">                
+                <tr>                    
+                    <td style="text-align:left; width:20%">
+                        &nbsp;<a href="SignOn.aspx"><img alt="" src="../Images/DNALogo.png" border="0" /></a></td>
+                    <td style="width:40%">&nbsp;</td>
+                    <td style="text-align:right; width:40%;padding-right:10px;">
+                        &nbsp;
+                        <img alt=""src="../Images/SheraLogo.png" /></td>
+                </tr>
+                               
+                <tr>                    
+                    <td style="text-align:left; width:20%">
+                        &nbsp;</td>
+                    <td style="width:40%">&nbsp;</td>
+                    <td style="text-align:right; width:40%">
+                        &nbsp;<asp:Image ID="Image1" runat="server" ImageAlign="AbsBottom" ImageUrl="~/Images/iconhome.png" Width="30px" />
+ <asp:LinkButton ID="lbMusername0" runat="server" CssClass="lbtmenusmall"  Font-Underline="false"  Text="กลับสู่หน้าหลัก"  PostBackUrl="~/FrontWeb/Signon.aspx"></asp:LinkButton>
+                
+                        </td>
+                </tr>
+            </table>
+            </div>
+         </div>
+        <div>        
+            <table style="width:100%;" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td style="background-color:#0c9e4b; height:30px; width:650px">
+                                &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>       
+    </header>
+
+    <div id="body">
+        <div style="float:left; width:5%">
+            &nbsp;
+        </div>
+        <div style="float:left; width:90%">
+            <table style="width:100%; vertical-align:top;  margin:0;" cellpadding="0" cellspacing="0"  >
+                <tr>
+                    <td style="height:auto; margin:0; vertical-align:top;">
+                        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                        <section class="content-wrapper main-content clear-fix">
+                            <asp:ContentPlaceHolder runat="server"  ID="MainContent" />
+                        </section>
+                    </td>                
+                </tr>
+            </table>
+        </div>
+        <div style="float:left; width:5%">
+            &nbsp;
+        </div>       
+        
+    </div>
+    <footer>
+        <div class="content-wrapper" >
+            <table style="width:100%; margin:-35px auto;" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:5%; padding-left:10px">
+                            <a href="ContactuS.aspx">
+                            <img alt="" style="height:55px ; width:55px"  src="../Content/images/icon/i_f_call.png"  border="0"/></a>
+                        </td>
+                        <td>
+                            <td>
+                            <asp:Label ID="Label1" CssClass="lbtxtfoot" runat="server" Text="ติดต่อ ดีเอ็นเอ วีแคร์ จันทร์ - ศุกร์ เวลา 8.00 - 17.30 น."></asp:Label>
+                            <br />
+                            <asp:Label ID="Label2" CssClass="lbtxtfoot1" runat="server" Text="Tel. 02 289 9836, 02 289 9839, Fax. 02 291 4130, Email : dna@sherasolution.com  www.sherasolution.com"></asp:Label>
+                        </td>
+                        </td>
+                        <td style="text-align:right;">
+                            <img alt="" style="height:70px"  src="../Content/images/icon/i_f_linechat.png" />&nbsp;
+                            <a href="QRCode.aspx" target="_blank" class="csslinkf"  ><img alt="" style="height:70px"  src="../Content/images/icon/i_f_line1.png" /></a>
+                            
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+            
+
+        </div>
+    </footer>
+    </form>
+</body>
+</html>

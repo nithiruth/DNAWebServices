@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<title>DNA</title>
+      <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   
+</head>
+<body>
+<div class="row">
+  <!-- header -->
+  
+  <div class="col-lg-12 col-md-12 container-fluid paddingTop15px">
+   <div class="col-lg-2 pull-left">
+       <img alt=""  src="../Images/DNALogo.png" /></div>
+   <div class="col-lg-6 pull-right">   <img alt=""  src="../Images/SheraLogo.png" /></div>
+   </div>
+  <!-- header -->
+  
+  <div class="col-lg-12 col-md-12 padding0">
+       <table cellpadding="0" cellspacing="0"  >
+       	 <tr>
+         	<td class="col-lg-8" style="padding-right:0;">
+            <ul id="pikame" >
+            	<li><img src="images/banner01.jpg" class="img-responsive"><span></span></li>
+                <li><img src="images/banner02.jpg" class="img-responsive"><span></span></li>
+                <li><img src="images/banner03.jpg" class="img-responsive"><span></span></li>
+            </ul>
+            </td>
+            <td class="col-lg-4 marginLeft15Minus loginBlock paddingTop15px" valign="top"> 
+            	<div class="text-center"><i class="glyphicon glyphicon-lock whitebg img-circle icon_register"></i></div>
+                
+                <br><br>
+                <div class="form-group">
+                บัญชีผู้ใช้งาน
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-envelope" style="color:#e96b24;"></i></div>
+                  <input type="text" class="form-control" id="username" placeholder="Username">
+                </div>
+                <br>
+                 รหัสผ่าน
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="glyphicon glyphicon-lock" style="color:#e96b24;"></i></div>
+                  <input type="password" class="form-control" id="username" placeholder="Username">
+                </div><br>
+                    <div >
+                        <a class="label" style="font-size:14px;" href="../frontweb/ForgetPassword.aspx">ลืมรหัสผ่าน</a>
+                    </div>
+                <div><a href="../frontweb/MenuAgentWholesale.aspx"><input type="image" src="images/login_button.png"></a> &nbsp; &nbsp; 
+                    <a href="../frontweb/MenuRegister.aspx"><input type="image" src="images/new_register.png"></a>
+                </div>
+                
+                </div>
+            </td>
+         </tr>
+       </table>
+  		
+  </div>
+  
+  <div class="paddingTop15px col-lg-12 text-center">
+         <a href="#"><img src="images/icon01.png" height="120"></a> &nbsp;&nbsp;&nbsp;
+         <a href="#"><img src="images/icon02.png" height="140"></a>
+  </div>
+  
+</div><!-- container -->
+<footer><img src="images/footer.png" class="img-responsive"></footer>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.pikachoose.min.js"></script>
+<script language="javascript">
+			$(document).ready(function (){
+					$("#pikame").PikaChoose({transition:[0]});
+				});
+		</script>
+</body>
+</html>

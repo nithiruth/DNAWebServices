@@ -1,0 +1,2216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C9AF8A2-4145-4618-BBD1-557132441C46}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DNAWebServices</RootNamespace>
+    <AssemblyName>DNAWebServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.4.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.15.1.4.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.2\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net40\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\arrow.jpg" />
+    <Content Include="Content\arrow.png" />
+    <Content Include="Content\css\bg.jpg" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\footer.jpg" />
+    <Content Include="Content\header.jpg" />
+    <Content Include="Content\images\arrow.gif" />
+    <Content Include="Content\images\backpoint.png" />
+    <Content Include="Content\images\checkbox.png" />
+    <Content Include="Content\images\dna_logo.png" />
+    <Content Include="Content\images\ibtpoint.png" />
+    <Content Include="Content\images\ibt_calculation.png" />
+    <Content Include="Content\images\ibt_dowload.png" />
+    <Content Include="Content\images\ibt_dowload2.png" />
+    <Content Include="Content\images\icon\i_addorder.png" />
+    <Content Include="Content\images\icon\i_balance.png" />
+    <Content Include="Content\images\icon\i_changReward.png" />
+    <Content Include="Content\images\icon\i_decoration.png" />
+    <Content Include="Content\images\icon\i_detailbuy.png" />
+    <Content Include="Content\images\icon\i_detailchange.png" />
+    <Content Include="Content\images\icon\i_detailsale.png" />
+    <Content Include="Content\images\icon\i_detailsales.png" />
+    <Content Include="Content\images\icon\i_dowload.png" />
+    <Content Include="Content\images\icon\i_edit.png" />
+    <Content Include="Content\images\icon\i_editfile.png" />
+    <Content Include="Content\images\icon\i_faqs.png" />
+    <Content Include="Content\images\icon\i_file.png" />
+    <Content Include="Content\images\icon\i_f_call.png" />
+    <Content Include="Content\images\icon\i_f_chera.png" />
+    <Content Include="Content\images\icon\i_f_line.png" />
+    <Content Include="Content\images\icon\i_f_line1.png" />
+    <Content Include="Content\images\icon\i_f_linechat.png" />
+    <Content Include="Content\images\icon\i_importOrder.png" />
+    <Content Include="Content\images\icon\i_lock.png" />
+    <Content Include="Content\images\icon\i_logon.png" />
+    <Content Include="Content\images\icon\i_map.png" />
+    <Content Include="Content\images\icon\i_m_cpwd.png" />
+    <Content Include="Content\images\icon\i_m_exit.png" />
+    <Content Include="Content\images\icon\i_m_home.png" />
+    <Content Include="Content\images\icon\i_m_info.png" />
+    <Content Include="Content\images\icon\i_m_resumet.png" />
+    <Content Include="Content\images\icon\i_m_user.png" />
+    <Content Include="Content\images\icon\i_news.png" />
+    <Content Include="Content\images\icon\i_point.png" />
+    <Content Include="Content\images\icon\i_point1.png" />
+    <Content Include="Content\images\icon\i_point2.png" />
+    <Content Include="Content\images\icon\i_presen.png" />
+    <Content Include="Content\images\icon\i_promo.png" />
+    <Content Include="Content\images\icon\i_regiter.png" />
+    <Content Include="Content\images\icon\i_regiter1.png" />
+    <Content Include="Content\images\icon\i_regiter2.png" />
+    <Content Include="Content\images\icon\i_username.png" />
+    <Content Include="Content\images\logo_hah.png" />
+    <Content Include="Content\images\radio.png" />
+    <Content Include="Content\images\Shera_logo_th.png" />
+    <Content Include="Content\images\S_24690710.jpg" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\slideshow\css\vanillaSlideshow.css" />
+    <Content Include="Content\slideshow\images\arrow-next.png" />
+    <Content Include="Content\slideshow\images\arrow-previous.png" />
+    <Content Include="Content\slideshow\images\arrows.png" />
+    <Content Include="Content\slideshow\images\tiger1.jpg" />
+    <Content Include="Content\slideshow\images\tiger2.jpg" />
+    <Content Include="Content\slideshow\images\tiger3.jpg" />
+    <Content Include="Content\slideshow\images\tiger4.jpg" />
+    <Content Include="Content\slideshow\js\vanillaSlideshow.js" />
+    <Content Include="Content\slideshow\js\vanillaSlideshow.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="FrontWeb\AgentAddOrde.aspx" />
+    <Content Include="FrontWeb\AgentAddOrdeDetail.aspx" />
+    <Content Include="FrontWeb\AgentAddOrderConfirm.aspx" />
+    <Content Include="FrontWeb\AgentAwardsA.aspx" />
+    <Content Include="FrontWeb\AgentDANPointWholeSale.aspx" />
+    <Content Include="FrontWeb\AgentDNAPointContractor.aspx" />
+    <Content Include="FrontWeb\AgentEditOrder.aspx" />
+    <Content Include="FrontWeb\AgentMainOrder.aspx" />
+    <Content Include="FrontWeb\AgentNewsPromotions.aspx" />
+    <Content Include="FrontWeb\AgentOrderMenu.aspx" />
+    <Content Include="FrontWeb\AgentParticipate.aspx" />
+    <Content Include="FrontWeb\AgentRedemption.aspx" />
+    <Content Include="FrontWeb\AgentRewardStep2.aspx" />
+    <Content Include="FrontWeb\CheckPointOwnerC.aspx" />
+    <Content Include="FrontWeb\CheckPointOwnerS.aspx" />
+    <Content Include="FrontWeb\CommentMenu.aspx" />
+    <Content Include="FrontWeb\ContactUs.aspx" />
+    <Content Include="FrontWeb\AgentEditOrder2.aspx" />
+    <Content Include="FrontWeb\ChangePassword.aspx" />
+    <Content Include="FrontWeb\DownloadPublic.aspx" />
+    <Content Include="FrontWeb\ProfileCDetail.aspx" />
+    <Content Include="FrontWeb\ProfileC.aspx" />
+    <Content Include="FrontWeb\ProfileSDetail.aspx" />
+    <Content Include="FrontWeb\ProfileA.aspx" />
+    <Content Include="FrontWeb\ProfileMenu.aspx" />
+    <Content Include="FrontWeb\ProfileS.aspx" />
+    <Content Include="FrontWeb\TermandCondition.aspx" />
+    <Content Include="FrontWeb\RewardHistorySub.aspx" />
+    <Content Include="FrontWeb\MenubyReward.aspx" />
+    <Content Include="FrontWeb\MenuRedeemingAwards.aspx" />
+    <Content Include="FrontWeb\MenuReportAwards.aspx" />
+    <Content Include="FrontWeb\OrderContractor.aspx" />
+    <Content Include="FrontWeb\OrderSubAgentDetail.aspx" />
+    <Content Include="FrontWeb\OrderSubAgent.aspx" />
+    <Content Include="FrontWeb\OrderOwnerSubDetail.aspx" />
+    <Content Include="FrontWeb\MenuAgentReport.aspx" />
+    <Content Include="FrontWeb\MenuReward.aspx" />
+    <Content Include="FrontWeb\MenuAgentWholesale.aspx" />
+    <Content Include="FrontWeb\CheckPointOwnerA.aspx" />
+    <Content Include="FrontWeb\Comment.aspx" />
+    <Content Include="FrontWeb\AgentImportOrder.aspx" />
+    <Content Include="FrontWeb\MenuContractor.aspx" />
+    <Content Include="FrontWeb\MenuByOrder.aspx" />
+    <Content Include="FrontWeb\MenuDowload.aspx" />
+    <Content Include="FrontWeb\LogOff.aspx" />
+    <Content Include="FrontWeb\Logon.aspx" />
+    <Content Include="FrontWeb\MenuSalesRecords.aspx" />
+    <Content Include="FrontWeb\NewsList.aspx" />
+    <Content Include="FrontWeb\OrderOwnerDetail.aspx" />
+    <Content Include="FrontWeb\QRCode.aspx" />
+    <Content Include="FrontWeb\RedeemingAwards.aspx" />
+    <Content Include="FrontWeb\RegisterA.aspx" />
+    <Content Include="FrontWeb\RegisterC.aspx" />
+    <Content Include="FrontWeb\RegisterDetailA.aspx" />
+    <Content Include="FrontWeb\RegisterS.aspx" />
+    <Content Include="FrontWeb\RewardHistory.aspx" />
+    <Content Include="FrontWeb\DownloadNew.aspx" />
+    <Content Include="FrontWeb\DownloadDocument.aspx" />
+    <Content Include="FrontWeb\DownloadPresent.aspx" />
+    <Content Include="FrontWeb\DownloadManual.aspx" />
+    <Content Include="FrontWeb\Download.aspx" />
+    <Content Include="FrontWeb\PointDetail.aspx" />
+    <Content Include="FrontWeb\ForgetPassword.aspx" />
+    <Content Include="FrontWeb\OrderContractor1.aspx" />
+    <Content Include="FrontWeb\OrderSubAgent1.aspx" />
+    <Content Include="FrontWeb\DNARewardsDealer.aspx" />
+    <Content Include="FrontWeb\DNARewardsRetailCustomers .aspx" />
+    <Content Include="FrontWeb\OrderListMenu.aspx" />
+    <Content Include="FrontWeb\OrderOwner.aspx" />
+    <Content Include="FrontWeb\Register.aspx" />
+    <Content Include="FrontWeb\Register2.aspx" />
+    <Content Include="FrontWeb\MenuRegister.aspx" />
+    <Content Include="FrontWeb\Signon.aspx" />
+    <Content Include="FrontWeb\StockList.aspx" />
+    <Content Include="FrontWeb\MenuSubAgentReseller.aspx" />
+    <Content Include="Home\css\base.css" />
+    <Content Include="Home\css\basic.png" />
+    <Content Include="Home\css\bootstrap-theme.css" />
+    <Content Include="Home\css\bootstrap-theme.min.css" />
+    <Content Include="Home\css\bootstrap.css" />
+    <Content Include="Home\css\bootstrap.min.css" />
+    <Content Include="Home\css\fastf.png" />
+    <Content Include="Home\css\loading.gif" />
+    <Content Include="Home\css\next-horizontal.png" />
+    <Content Include="Home\css\next-vertical.png" />
+    <Content Include="Home\css\next.png" />
+    <Content Include="Home\css\pause.png" />
+    <Content Include="Home\css\play.png" />
+    <Content Include="Home\css\prev-horizontal.png" />
+    <Content Include="Home\css\prev-vertical.png" />
+    <Content Include="Home\css\prev.png" />
+    <Content Include="Home\css\rewind.png" />
+    <Content Include="Home\css\style.css" />
+    <Content Include="Home\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Home\images\banner01.jpg" />
+    <Content Include="Home\images\banner02.jpg" />
+    <Content Include="Home\images\banner03.jpg" />
+    <Content Include="Home\images\footer.png" />
+    <Content Include="Home\images\header_banner.png" />
+    <Content Include="Home\images\icon01.png" />
+    <Content Include="Home\images\icon02.png" />
+    <Content Include="Home\images\login_button.png" />
+    <Content Include="Home\images\logo.png" />
+    <Content Include="Home\images\new_register.png" />
+    <Content Include="Home\index.html" />
+    <Content Include="Home\js\bootstrap.js" />
+    <Content Include="Home\js\bootstrap.min.js" />
+    <Content Include="Home\js\jquery-1.11.3.min.js" />
+    <Content Include="Home\js\jquery.pikachoose.min.js" />
+    <Content Include="Images\001.jpg" />
+    <Content Include="Images\002.jpg" />
+    <Content Include="Images\003.jpg" />
+    <Content Include="Images\004.jpg" />
+    <Content Include="Images\005.jpg" />
+    <Content Include="Images\006.jpg" />
+    <Content Include="Images\007.jpg" />
+    <Content Include="Images\008.jpg" />
+    <Content Include="Images\009.jpg" />
+    <Content Include="Images\010.jpg" />
+    <Content Include="Images\011.jpg" />
+    <Content Include="Images\012.jpg" />
+    <Content Include="Images\013.jpg" />
+    <Content Include="Images\014.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\active.png" />
+    <Content Include="Images\banner01.jpg" />
+    <Content Include="Images\banner02.jpg" />
+    <Content Include="Images\banner03.jpg" />
+    <Content Include="Images\banner04.jpg" />
+    <Content Include="Images\banner05.jpg" />
+    <Content Include="Images\banner06.jpg" />
+    <Content Include="Images\btn-enlarge-map.png" />
+    <Content Include="Images\btn-print-map.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Chart03.png" />
+    <Content Include="Images\Chart04.png" />
+    <Content Include="Images\Chart05.png" />
+    <Content Include="Images\Chart06.png" />
+    <Content Include="Images\Chart07.png" />
+    <Content Include="Images\chat.jpg" />
+    <Content Include="Images\DNALogo.png" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\form.jpg" />
+    <Content Include="Images\grayArrow.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\icon-how-to-learn.jpg" />
+    <Content Include="Images\iconhome.png" />
+    <Content Include="Images\iconlogout.png" />
+    <Content Include="Images\icons.png" />
+    <Content Include="Images\icon\edit.png" />
+    <Content Include="Images\icon\search.png" />
+    <Content Include="Images\icon\search_user.png" />
+    <Content Include="Images\line.png" />
+    <Content Include="Images\map.gif" />
+    <Content Include="Images\news001.png" />
+    <Content Include="Images\news002.png" />
+    <Content Include="Images\news003.png" />
+    <Content Include="Images\news004.png" />
+    <Content Include="Images\news005.png" />
+    <Content Include="Images\news006.png" />
+    <Content Include="Images\news1.jpg" />
+    <Content Include="Images\news2.jpg" />
+    <Content Include="Images\news3.jpg" />
+    <Content Include="Images\news4.jpg" />
+    <Content Include="Images\news5.jpg" />
+    <Content Include="Images\news6.png" />
+    <Content Include="Images\news7.png" />
+    <Content Include="Images\news8.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Pics\001.jpg" />
+    <Content Include="Images\Pics\002.jpg" />
+    <Content Include="Images\Pics\003.jpg" />
+    <Content Include="Images\Pics\004.jpg" />
+    <Content Include="Images\Pics\005.jpg" />
+    <Content Include="Images\Pics\006.jpg" />
+    <Content Include="Images\Pics\007.jpg" />
+    <Content Include="Images\Pics\008.jpg" />
+    <Content Include="Images\Pics\009.jpg" />
+    <Content Include="Images\Pics\010.jpg" />
+    <Content Include="Images\Pics\011.jpg" />
+    <Content Include="Images\Pics\012.jpg" />
+    <Content Include="Images\Pics\013.jpg" />
+    <Content Include="Images\Pics\014.jpg" />
+    <Content Include="Images\Pics\icon-how-to-learn.jpg" />
+    <Content Include="Images\registermenu.png" />
+    <Content Include="Images\report1.png" />
+    <Content Include="Images\Report2.png" />
+    <Content Include="Images\reward01.jpg" />
+    <Content Include="Images\reward02.jpg" />
+    <Content Include="Images\reward02.png" />
+    <Content Include="Images\reward03.jpg" />
+    <Content Include="Images\reward04.jpg" />
+    <Content Include="Images\RewardPage1.png" />
+    <Content Include="Images\RewardPage2.png" />
+    <Content Include="Images\sample.jpg" />
+    <Content Include="Images\sample2.jpg" />
+    <Content Include="Images\Sample3.jpg" />
+    <Content Include="Images\Sample4.jpg" />
+    <Content Include="Images\samplechart1.png" />
+    <Content Include="Images\SampleChart2.png" />
+    <Content Include="Images\SheraLogo.png" />
+    <Content Include="Images\stock01.png" />
+    <Content Include="Images\stock02.png" />
+    <Content Include="Images\stock03.png" />
+    <Content Include="Images\yellowArrow.png" />
+    <Content Include="Images\zoom_in.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="jQuery\blue\css\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="jQuery\blue\css\start\jquery-ui-1.8.16.custom.css" />
+    <Content Include="jQuery\blue\development-bundle\AUTHORS.txt" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\collapsible.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\custom-icons.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\fillspace.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\hoverintent.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\mouseover.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\no-auto-height.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\accordion\sortable.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\addClass\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\addClass\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\animate\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\animate\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\categories.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\combobox.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\custom-data.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\folding.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\images\jqueryui_32x32.png" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\images\jquery_32x32.png" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\images\sizzlejs_32x32.png" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\images\transparent_1x1.png" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\images\ui-anim_basic_16x16.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\london.xml" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\maxheight.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\multiple-remote.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\multiple.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\remote-jsonp.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\remote-with-cache.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\remote.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\search.php" />
+    <Content Include="jQuery\blue\development-bundle\demos\autocomplete\xml.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\checkbox.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\icons.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\radio.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\splitbutton.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\button\toolbar.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\alt-field.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\animation.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\buttonbar.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\date-formats.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\date-range.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\dropdown-month-year.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\icon-trigger.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\images\calendar.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\inline.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\localization.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\min-max.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\multiple-calendars.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\other-months.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\datepicker\show-week.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\demos.css" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\animated.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\modal-confirmation.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\modal-form.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\modal-message.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\dialog\modal.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\constrain-movement.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\cursor-style.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\delay-start.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\events.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\handle.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\revert.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\scroll.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\snap-to.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\sortable.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\draggable\visual-feedback.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\accepted-elements.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras2.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras2_min.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras3.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras3_min.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras4.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras4_min.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\images\high_tatras_min.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\photo-manager.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\propagation.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\revert.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\shopping-cart.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\droppable\visual-feedback.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\effect\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\effect\easing.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\effect\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\hide\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\hide\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\calendar.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\demo-config-on-tile.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\demo-config-on.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\demo-spindown-closed.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\demo-spindown-open.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\icon-docs-info.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\images\pbar-ani.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\cycler.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\images\earth.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\images\flight.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\images\rocket.jpg" />
+    <Content Include="jQuery\blue\development-bundle\demos\position\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\progressbar\animated.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\progressbar\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\progressbar\images\pbar-ani.gif" />
+    <Content Include="jQuery\blue\development-bundle\demos\progressbar\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\progressbar\resize.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\removeClass\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\removeClass\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\animate.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\aspect-ratio.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\constrain-area.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\delay-start.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\helper.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\max-min.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\snap-to-grid.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\synchronous-resize.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\textarea.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\resizable\visual-feedback.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\selectable\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\selectable\display-grid.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\selectable\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\selectable\serialize.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\show\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\show\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\colorpicker.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\hotelrooms.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\multiple-vertical.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\range-vertical.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\range.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\rangemax.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\rangemin.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\side-scroll.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\slider-vertical.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\steps.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\slider\tabs.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\connect-lists-through-tabs.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\connect-lists.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\delay-start.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\display-grid.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\empty-lists.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\items.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\placeholder.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\sortable\portlets.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\switchClass\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\switchClass\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\ajax.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\ajax\content1.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\ajax\content2.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\ajax\content3-slow.php" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\ajax\content4-broken.php" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\bottom.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\collapsible.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\cookie.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\manipulation.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\mouseover.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\sortable.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\tabs\vertical.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\toggleClass\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\toggleClass\index.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\toggle\default.html" />
+    <Content Include="jQuery\blue\development-bundle\demos\toggle\index.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\accordion.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\addClass.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\animate.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\autocomplete.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\button.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\datepicker.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\dialog.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\draggable.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\droppable.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\effect.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\hide.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\position.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\progressbar.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\removeClass.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\resizable.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\selectable.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\show.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\slider.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\sortable.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\switchClass.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\tabs.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\toggle.html" />
+    <Content Include="jQuery\blue\development-bundle\docs\toggleClass.html" />
+    <Content Include="jQuery\blue\development-bundle\external\jquery.bgiframe-2.1.2.js" />
+    <Content Include="jQuery\blue\development-bundle\external\jquery.cookie.js" />
+    <Content Include="jQuery\blue\development-bundle\external\jquery.metadata.js" />
+    <Content Include="jQuery\blue\development-bundle\external\qunit.css" />
+    <Content Include="jQuery\blue\development-bundle\external\qunit.js" />
+    <Content Include="jQuery\blue\development-bundle\GPL-LICENSE.txt" />
+    <Content Include="jQuery\blue\development-bundle\jquery-1.6.2.js" />
+    <Content Include="jQuery\blue\development-bundle\MIT-LICENSE.txt" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.accordion.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.all.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.base.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.button.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.core.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.dialog.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.resizable.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.selectable.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.slider.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.tabs.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\base\jquery.ui.theme.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery-ui-1.8.16.custom.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.accordion.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.all.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.autocomplete.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.base.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.button.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.core.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.datepicker.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.dialog.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.progressbar.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.resizable.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.selectable.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.slider.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.tabs.css" />
+    <Content Include="jQuery\blue\development-bundle\themes\start\jquery.ui.theme.css" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery-ui-i18n.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-kz.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery-ui-1.8.16.custom.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.blind.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.bounce.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.clip.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.core.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.drop.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.explode.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.fade.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.fold.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.highlight.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.pulsate.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.scale.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.shake.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.slide.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.effects.transfer.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.accordion.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.autocomplete.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.button.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.core.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.datepicker.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.dialog.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.draggable.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.droppable.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.mouse.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.position.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.progressbar.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.resizable.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.selectable.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.slider.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.sortable.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.tabs.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\jquery.ui.widget.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.blind.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.bounce.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.clip.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.core.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.drop.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.explode.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.fade.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.fold.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.highlight.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.pulsate.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.scale.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.shake.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.slide.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.effects.transfer.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.accordion.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.autocomplete.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.button.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.datepicker.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.dialog.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.progressbar.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.slider.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.tabs.min.js" />
+    <Content Include="jQuery\blue\development-bundle\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="jQuery\blue\development-bundle\version.txt" />
+    <Content Include="jQuery\blue\js\jquery-1.6.2.min.js" />
+    <Content Include="jQuery\blue\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="jQuery\button\button.css" />
+    <Content Include="jQuery\button\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="jQuery\button\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="jQuery\button\images\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="jQuery\button\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="jQuery\button\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="jQuery\button\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="jQuery\button\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="jQuery\button\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="jQuery\button\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="jQuery\button\images\ui-icons_004276_256x240.png" />
+    <Content Include="jQuery\button\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="jQuery\button\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jQuery\button\jquery.ui.button.js" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_gloss-wave_75_06ca5d_500x100.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_highlight-hard_45_dddddd_1x100.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_highlight-hard_75_06ca5d_1x100.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_1ae173_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jQuery\css\custom-theme\jquery-ui-1.9.2.custom.css" />
+    <Content Include="jQuery\css\custom-theme\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="jQuery\development-bundle\AUTHORS.txt" />
+    <Content Include="jQuery\development-bundle\demos\accordion\collapsible.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\custom-icons.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\default.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\fillspace.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\hoverintent.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\index.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\no-auto-height.html" />
+    <Content Include="jQuery\development-bundle\demos\accordion\sortable.html" />
+    <Content Include="jQuery\development-bundle\demos\addClass\default.html" />
+    <Content Include="jQuery\development-bundle\demos\addClass\index.html" />
+    <Content Include="jQuery\development-bundle\demos\animate\default.html" />
+    <Content Include="jQuery\development-bundle\demos\animate\index.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\categories.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\combobox.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\custom-data.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\default.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\folding.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\images\jqueryui_32x32.png" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\images\jquery_32x32.png" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\images\sizzlejs_32x32.png" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\images\transparent_1x1.png" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\images\ui-anim_basic_16x16.gif" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\index.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\london.xml" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\maxheight.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\multiple-remote.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\multiple.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\remote-jsonp.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\remote-with-cache.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\remote.html" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\search.php" />
+    <Content Include="jQuery\development-bundle\demos\autocomplete\xml.html" />
+    <Content Include="jQuery\development-bundle\demos\button\checkbox.html" />
+    <Content Include="jQuery\development-bundle\demos\button\default.html" />
+    <Content Include="jQuery\development-bundle\demos\button\icons.html" />
+    <Content Include="jQuery\development-bundle\demos\button\index.html" />
+    <Content Include="jQuery\development-bundle\demos\button\radio.html" />
+    <Content Include="jQuery\development-bundle\demos\button\splitbutton.html" />
+    <Content Include="jQuery\development-bundle\demos\button\toolbar.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\alt-field.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\animation.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\buttonbar.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\date-formats.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\date-range.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\default.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\dropdown-month-year.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\icon-trigger.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\images\calendar.gif" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\index.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\inline.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\localization.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\min-max.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\multiple-calendars.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\other-months.html" />
+    <Content Include="jQuery\development-bundle\demos\datepicker\show-week.html" />
+    <Content Include="jQuery\development-bundle\demos\demos.css" />
+    <Content Include="jQuery\development-bundle\demos\dialog\animated.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\default.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\index.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\modal-confirmation.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\modal-form.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\modal-message.html" />
+    <Content Include="jQuery\development-bundle\demos\dialog\modal.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\constrain-movement.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\cursor-style.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\default.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\delay-start.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\events.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\handle.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\index.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\revert.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\scroll.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\snap-to.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\sortable.html" />
+    <Content Include="jQuery\development-bundle\demos\draggable\visual-feedback.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\accepted-elements.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\default.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras2.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras2_min.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras3.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras3_min.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras4.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras4_min.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\images\high_tatras_min.jpg" />
+    <Content Include="jQuery\development-bundle\demos\droppable\index.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\photo-manager.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\propagation.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\revert.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\shopping-cart.html" />
+    <Content Include="jQuery\development-bundle\demos\droppable\visual-feedback.html" />
+    <Content Include="jQuery\development-bundle\demos\effect\default.html" />
+    <Content Include="jQuery\development-bundle\demos\effect\easing.html" />
+    <Content Include="jQuery\development-bundle\demos\effect\index.html" />
+    <Content Include="jQuery\development-bundle\demos\hide\default.html" />
+    <Content Include="jQuery\development-bundle\demos\hide\index.html" />
+    <Content Include="jQuery\development-bundle\demos\images\calendar.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\demo-config-on-tile.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\demo-config-on.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\demo-spindown-closed.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\demo-spindown-open.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\icon-docs-info.gif" />
+    <Content Include="jQuery\development-bundle\demos\images\pbar-ani.gif" />
+    <Content Include="jQuery\development-bundle\demos\index.html" />
+    <Content Include="jQuery\development-bundle\demos\menu\default.html" />
+    <Content Include="jQuery\development-bundle\demos\menu\icons.html" />
+    <Content Include="jQuery\development-bundle\demos\menu\index.html" />
+    <Content Include="jQuery\development-bundle\demos\position\cycler.html" />
+    <Content Include="jQuery\development-bundle\demos\position\default.html" />
+    <Content Include="jQuery\development-bundle\demos\position\images\earth.jpg" />
+    <Content Include="jQuery\development-bundle\demos\position\images\flight.jpg" />
+    <Content Include="jQuery\development-bundle\demos\position\images\rocket.jpg" />
+    <Content Include="jQuery\development-bundle\demos\position\index.html" />
+    <Content Include="jQuery\development-bundle\demos\progressbar\animated.html" />
+    <Content Include="jQuery\development-bundle\demos\progressbar\default.html" />
+    <Content Include="jQuery\development-bundle\demos\progressbar\images\pbar-ani.gif" />
+    <Content Include="jQuery\development-bundle\demos\progressbar\index.html" />
+    <Content Include="jQuery\development-bundle\demos\progressbar\resize.html" />
+    <Content Include="jQuery\development-bundle\demos\removeClass\default.html" />
+    <Content Include="jQuery\development-bundle\demos\removeClass\index.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\animate.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\aspect-ratio.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\constrain-area.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\default.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\delay-start.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\helper.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\index.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\max-min.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\snap-to-grid.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\synchronous-resize.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\textarea.html" />
+    <Content Include="jQuery\development-bundle\demos\resizable\visual-feedback.html" />
+    <Content Include="jQuery\development-bundle\demos\selectable\default.html" />
+    <Content Include="jQuery\development-bundle\demos\selectable\display-grid.html" />
+    <Content Include="jQuery\development-bundle\demos\selectable\index.html" />
+    <Content Include="jQuery\development-bundle\demos\selectable\serialize.html" />
+    <Content Include="jQuery\development-bundle\demos\show\default.html" />
+    <Content Include="jQuery\development-bundle\demos\show\index.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\colorpicker.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\default.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\hotelrooms.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\index.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\multiple-vertical.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\range-vertical.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\range.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\rangemax.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\rangemin.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\side-scroll.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\slider-vertical.html" />
+    <Content Include="jQuery\development-bundle\demos\slider\steps.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\connect-lists-through-tabs.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\connect-lists.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\default.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\delay-start.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\display-grid.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\empty-lists.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\index.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\items.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\placeholder.html" />
+    <Content Include="jQuery\development-bundle\demos\sortable\portlets.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\currency.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\decimal.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\default.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\index.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\latlong.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\overflow.html" />
+    <Content Include="jQuery\development-bundle\demos\spinner\time.html" />
+    <Content Include="jQuery\development-bundle\demos\switchClass\default.html" />
+    <Content Include="jQuery\development-bundle\demos\switchClass\index.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\ajax.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\ajax\content1.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\ajax\content2.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\ajax\content3-slow.php" />
+    <Content Include="jQuery\development-bundle\demos\tabs\ajax\content4-broken.php" />
+    <Content Include="jQuery\development-bundle\demos\tabs\bottom.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\collapsible.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\default.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\index.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\manipulation.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\mouseover.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\sortable.html" />
+    <Content Include="jQuery\development-bundle\demos\tabs\vertical.html" />
+    <Content Include="jQuery\development-bundle\demos\toggleClass\default.html" />
+    <Content Include="jQuery\development-bundle\demos\toggleClass\index.html" />
+    <Content Include="jQuery\development-bundle\demos\toggle\default.html" />
+    <Content Include="jQuery\development-bundle\demos\toggle\index.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\ajax\content1.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\ajax\content2.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\custom-animation.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\custom-content.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\custom-style.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\default.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\forms.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\images\st-stephens.jpg" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\images\tower-bridge.jpg" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\index.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\tracking.html" />
+    <Content Include="jQuery\development-bundle\demos\tooltip\video-player.html" />
+    <Content Include="jQuery\development-bundle\demos\widget\default.html" />
+    <Content Include="jQuery\development-bundle\demos\widget\index.html" />
+    <Content Include="jQuery\development-bundle\docs\accordion.html" />
+    <Content Include="jQuery\development-bundle\docs\autocomplete.html" />
+    <Content Include="jQuery\development-bundle\docs\blind-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\bounce-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\button.html" />
+    <Content Include="jQuery\development-bundle\docs\clip-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\datepicker.html" />
+    <Content Include="jQuery\development-bundle\docs\dialog.html" />
+    <Content Include="jQuery\development-bundle\docs\draggable.html" />
+    <Content Include="jQuery\development-bundle\docs\drop-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\droppable.html" />
+    <Content Include="jQuery\development-bundle\docs\explode-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\fade-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\fold-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\highlight-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\jQuery.widget.html" />
+    <Content Include="jQuery\development-bundle\docs\menu.html" />
+    <Content Include="jQuery\development-bundle\docs\mouse.html" />
+    <Content Include="jQuery\development-bundle\docs\position.html" />
+    <Content Include="jQuery\development-bundle\docs\progressbar.html" />
+    <Content Include="jQuery\development-bundle\docs\puff-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\pulsate-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\resizable.html" />
+    <Content Include="jQuery\development-bundle\docs\scale-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\selectable.html" />
+    <Content Include="jQuery\development-bundle\docs\shake-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\size-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\slide-effect.html" />
+    <Content Include="jQuery\development-bundle\docs\slider.html" />
+    <Content Include="jQuery\development-bundle\docs\sortable.html" />
+    <Content Include="jQuery\development-bundle\docs\spinner.html" />
+    <Content Include="jQuery\development-bundle\docs\tabs.html" />
+    <Content Include="jQuery\development-bundle\docs\tooltip.html" />
+    <Content Include="jQuery\development-bundle\docs\transfer-effect.html" />
+    <Content Include="jQuery\development-bundle\external\globalize.culture.de-DE.js" />
+    <Content Include="jQuery\development-bundle\external\globalize.culture.ja-JP.js" />
+    <Content Include="jQuery\development-bundle\external\globalize.js" />
+    <Content Include="jQuery\development-bundle\external\jquery.bgiframe-2.1.2.js" />
+    <Content Include="jQuery\development-bundle\external\jquery.cookie.js" />
+    <Content Include="jQuery\development-bundle\external\jquery.metadata.js" />
+    <Content Include="jQuery\development-bundle\external\jquery.mousewheel.js" />
+    <Content Include="jQuery\development-bundle\external\jshint.js" />
+    <Content Include="jQuery\development-bundle\external\qunit.css" />
+    <Content Include="jQuery\development-bundle\external\qunit.js" />
+    <Content Include="jQuery\development-bundle\grunt.js" />
+    <Content Include="jQuery\development-bundle\jquery-1.8.3.js" />
+    <Content Include="jQuery\development-bundle\MIT-LICENSE.txt" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery-ui.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.accordion.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.all.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.base.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.button.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.core.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.dialog.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.menu.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.resizable.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.selectable.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.slider.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.spinner.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.tabs.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.theme.css" />
+    <Content Include="jQuery\development-bundle\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="jQuery\development-bundle\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_gloss-wave_75_06ca5d_500x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_highlight-hard_45_dddddd_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_highlight-hard_75_06ca5d_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_1ae173_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery-ui.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.accordion.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.all.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.autocomplete.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.base.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.button.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.core.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.datepicker.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.dialog.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.menu.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.progressbar.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.resizable.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.selectable.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.slider.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.spinner.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.tabs.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.theme.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\jquery.ui.tooltip.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_gloss-wave_75_06ca5d_500x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_highlight-hard_45_dddddd_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_highlight-hard_75_06ca5d_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_1ae173_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery-ui.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.accordion.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.button.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.core.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.dialog.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.menu.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.resizable.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.selectable.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.slider.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.spinner.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.tabs.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.theme.min.css" />
+    <Content Include="jQuery\development-bundle\themes\custom-theme\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery-ui-i18n.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-cy-GB.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-hi.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ka.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-kk.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-km.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-lb.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-mk.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="jQuery\development-bundle\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery-ui.custom.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.accordion.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.autocomplete.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.button.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.core.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.datepicker.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.dialog.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.draggable.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.droppable.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-blind.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-bounce.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-clip.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-drop.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-explode.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-fade.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-fold.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-highlight.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-pulsate.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-scale.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-shake.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-slide.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect-transfer.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.effect.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.menu.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.mouse.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.position.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.progressbar.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.resizable.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.selectable.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.slider.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.sortable.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.spinner.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.tabs.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.tooltip.js" />
+    <Content Include="jQuery\development-bundle\ui\jquery.ui.widget.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery-ui-i18n.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-af.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ar-DZ.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ar.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-az.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-bg.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-bs.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ca.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-cs.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-cy-GB.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-da.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-de.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-el.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-AU.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-GB.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-NZ.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-eo.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-es.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-et.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-eu.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fa.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fi.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fo.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fr-CH.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fr.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-gl.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-he.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hi.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hr.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hu.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hy.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-id.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-is.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-it.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ja.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ka.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-kk.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-km.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ko.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lb.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lt.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lv.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-mk.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ml.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ms.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nl-BE.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nl.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-no.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pl.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pt-BR.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pt.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-rm.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ro.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ru.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sk.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sl.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sq.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sr-SR.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sr.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sv.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ta.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-th.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-tj.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-tr.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-uk.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-vi.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-CN.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-HK.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-TW.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery-ui.custom.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.accordion.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.autocomplete.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.button.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.datepicker.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.dialog.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-blind.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-bounce.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-clip.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-drop.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-explode.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-fade.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-fold.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-highlight.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-pulsate.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-scale.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-shake.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-slide.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect-transfer.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.effect.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.menu.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.progressbar.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.slider.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.spinner.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.tabs.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.tooltip.min.js" />
+    <Content Include="jQuery\development-bundle\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="jQuery\index.html" />
+    <Content Include="jQuery\jquery-1.4.4.min.js" />
+    <Content Include="jQuery\jquery-1.6.2.min.js" />
+    <Content Include="jQuery\jquery-1.9.1.min.js" />
+    <Content Include="jQuery\jquery-ui-1.8.10.offset.datepicker.min.js" />
+    <Content Include="jQuery\js\jquery-1.8.3.js" />
+    <Content Include="jQuery\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="jQuery\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="packages.config" />
+    <Content Include="Content\font\shera_bol_beta_03.otf" />
+    <Content Include="Content\font\shera_bol_ita_beta_03.otf" />
+    <Content Include="Content\font\shera_ita_beta_03.otf" />
+    <Content Include="Content\font\shera_lig_beta_03.otf" />
+    <Content Include="Content\font\shera_lig_ita_beta_03.otf" />
+    <Content Include="Content\font\shera_reg_beta_03.otf" />
+    <Content Include="Home\css\bootstrap-theme.css.map" />
+    <Content Include="Home\css\bootstrap.css.map" />
+    <Content Include="Home\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Home\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Home\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="jQuery\development-bundle\package.json" />
+    <Content Include="jQuery\development-bundle\README.md" />
+    <Content Include="jQuery\development-bundle\ui.accordion.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.autocomplete.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.button.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.core.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.datepicker.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.dialog.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.draggable.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.droppable.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-blind.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-bounce.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-clip.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-drop.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-explode.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-fade.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-fold.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-highlight.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-pulsate.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-scale.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-shake.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-slide.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect-transfer.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.effect.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.menu.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.mouse.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.position.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.progressbar.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.resizable.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.selectable.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.slider.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.sortable.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.spinner.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.tabs.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.tooltip.jquery.json" />
+    <Content Include="jQuery\development-bundle\ui.widget.jquery.json" />
+    <None Include="Properties\PublishProfiles\DNAWebServices.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\accordionmenu.css" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\_references.js" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrde.aspx.cs">
+      <DependentUpon>AgentAddOrde.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrde.aspx.designer.cs">
+      <DependentUpon>AgentAddOrde.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrdeDetail.aspx.cs">
+      <DependentUpon>AgentAddOrdeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrdeDetail.aspx.designer.cs">
+      <DependentUpon>AgentAddOrdeDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrderConfirm.aspx.cs">
+      <DependentUpon>AgentAddOrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAddOrderConfirm.aspx.designer.cs">
+      <DependentUpon>AgentAddOrderConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAwardsA.aspx.cs">
+      <DependentUpon>AgentAwardsA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentAwardsA.aspx.designer.cs">
+      <DependentUpon>AgentAwardsA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentDANPointWholeSale.aspx.cs">
+      <DependentUpon>AgentDANPointWholeSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentDANPointWholeSale.aspx.designer.cs">
+      <DependentUpon>AgentDANPointWholeSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentDNAPointContractor.aspx.cs">
+      <DependentUpon>AgentDNAPointContractor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentDNAPointContractor.aspx.designer.cs">
+      <DependentUpon>AgentDNAPointContractor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentEditOrder.aspx.cs">
+      <DependentUpon>AgentEditOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentEditOrder.aspx.designer.cs">
+      <DependentUpon>AgentEditOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentMainOrder.aspx.cs">
+      <DependentUpon>AgentMainOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentMainOrder.aspx.designer.cs">
+      <DependentUpon>AgentMainOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentNewsPromotions.aspx.cs">
+      <DependentUpon>AgentNewsPromotions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentNewsPromotions.aspx.designer.cs">
+      <DependentUpon>AgentNewsPromotions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentOrderMenu.aspx.cs">
+      <DependentUpon>AgentOrderMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentOrderMenu.aspx.designer.cs">
+      <DependentUpon>AgentOrderMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentParticipate.aspx.cs">
+      <DependentUpon>AgentParticipate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentParticipate.aspx.designer.cs">
+      <DependentUpon>AgentParticipate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentRedemption.aspx.cs">
+      <DependentUpon>AgentRedemption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentRedemption.aspx.designer.cs">
+      <DependentUpon>AgentRedemption.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentRewardStep2.aspx.cs">
+      <DependentUpon>AgentRewardStep2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentRewardStep2.aspx.designer.cs">
+      <DependentUpon>AgentRewardStep2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerC.aspx.cs">
+      <DependentUpon>CheckPointOwnerC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerC.aspx.designer.cs">
+      <DependentUpon>CheckPointOwnerC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerS.aspx.cs">
+      <DependentUpon>CheckPointOwnerS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerS.aspx.designer.cs">
+      <DependentUpon>CheckPointOwnerS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\CommentMenu.aspx.cs">
+      <DependentUpon>CommentMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\CommentMenu.aspx.designer.cs">
+      <DependentUpon>CommentMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentEditOrder2.aspx.cs">
+      <DependentUpon>AgentEditOrder2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentEditOrder2.aspx.designer.cs">
+      <DependentUpon>AgentEditOrder2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadPublic.aspx.cs">
+      <DependentUpon>DownloadPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadPublic.aspx.designer.cs">
+      <DependentUpon>DownloadPublic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileCDetail.aspx.cs">
+      <DependentUpon>ProfileCDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileCDetail.aspx.designer.cs">
+      <DependentUpon>ProfileCDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileC.aspx.cs">
+      <DependentUpon>ProfileC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileC.aspx.designer.cs">
+      <DependentUpon>ProfileC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileSDetail.aspx.cs">
+      <DependentUpon>ProfileSDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileSDetail.aspx.designer.cs">
+      <DependentUpon>ProfileSDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileA.aspx.cs">
+      <DependentUpon>ProfileA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileA.aspx.designer.cs">
+      <DependentUpon>ProfileA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileMenu.aspx.cs">
+      <DependentUpon>ProfileMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileMenu.aspx.designer.cs">
+      <DependentUpon>ProfileMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileS.aspx.cs">
+      <DependentUpon>ProfileS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ProfileS.aspx.designer.cs">
+      <DependentUpon>ProfileS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\TermandCondition.aspx.cs">
+      <DependentUpon>TermandCondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\TermandCondition.aspx.designer.cs">
+      <DependentUpon>TermandCondition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RewardHistorySub.aspx.cs">
+      <DependentUpon>RewardHistorySub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RewardHistorySub.aspx.designer.cs">
+      <DependentUpon>RewardHistorySub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenubyReward.aspx.cs">
+      <DependentUpon>MenubyReward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenubyReward.aspx.designer.cs">
+      <DependentUpon>MenubyReward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuRedeemingAwards.aspx.cs">
+      <DependentUpon>MenuRedeemingAwards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuRedeemingAwards.aspx.designer.cs">
+      <DependentUpon>MenuRedeemingAwards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuReportAwards.aspx.cs">
+      <DependentUpon>MenuReportAwards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuReportAwards.aspx.designer.cs">
+      <DependentUpon>MenuReportAwards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderContractor.aspx.cs">
+      <DependentUpon>OrderContractor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderContractor.aspx.designer.cs">
+      <DependentUpon>OrderContractor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgentDetail.aspx.cs">
+      <DependentUpon>OrderSubAgentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgentDetail.aspx.designer.cs">
+      <DependentUpon>OrderSubAgentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgent.aspx.cs">
+      <DependentUpon>OrderSubAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgent.aspx.designer.cs">
+      <DependentUpon>OrderSubAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwnerSubDetail.aspx.cs">
+      <DependentUpon>OrderOwnerSubDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwnerSubDetail.aspx.designer.cs">
+      <DependentUpon>OrderOwnerSubDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuAgentReport.aspx.cs">
+      <DependentUpon>MenuAgentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuAgentReport.aspx.designer.cs">
+      <DependentUpon>MenuAgentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuReward.aspx.cs">
+      <DependentUpon>MenuReward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuReward.aspx.designer.cs">
+      <DependentUpon>MenuReward.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuAgentWholesale.aspx.cs">
+      <DependentUpon>MenuAgentWholesale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuAgentWholesale.aspx.designer.cs">
+      <DependentUpon>MenuAgentWholesale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerA.aspx.cs">
+      <DependentUpon>CheckPointOwnerA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\CheckPointOwnerA.aspx.designer.cs">
+      <DependentUpon>CheckPointOwnerA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\AgentImportOrder.aspx.cs">
+      <DependentUpon>AgentImportOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\AgentImportOrder.aspx.designer.cs">
+      <DependentUpon>AgentImportOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuContractor.aspx.cs">
+      <DependentUpon>MenuContractor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuContractor.aspx.designer.cs">
+      <DependentUpon>MenuContractor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuByOrder.aspx.cs">
+      <DependentUpon>MenuByOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuByOrder.aspx.designer.cs">
+      <DependentUpon>MenuByOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuDowload.aspx.cs">
+      <DependentUpon>MenuDowload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuDowload.aspx.designer.cs">
+      <DependentUpon>MenuDowload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Logon.aspx.designer.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuSalesRecords.aspx.cs">
+      <DependentUpon>MenuSalesRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuSalesRecords.aspx.designer.cs">
+      <DependentUpon>MenuSalesRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwnerDetail.aspx.cs">
+      <DependentUpon>OrderOwnerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwnerDetail.aspx.designer.cs">
+      <DependentUpon>OrderOwnerDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\QRCode.aspx.cs">
+      <DependentUpon>QRCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\QRCode.aspx.designer.cs">
+      <DependentUpon>QRCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RedeemingAwards.aspx.cs">
+      <DependentUpon>RedeemingAwards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RedeemingAwards.aspx.designer.cs">
+      <DependentUpon>RedeemingAwards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterA.aspx.cs">
+      <DependentUpon>RegisterA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterA.aspx.designer.cs">
+      <DependentUpon>RegisterA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterC.aspx.cs">
+      <DependentUpon>RegisterC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterC.aspx.designer.cs">
+      <DependentUpon>RegisterC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterDetailA.aspx.cs">
+      <DependentUpon>RegisterDetailA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterDetailA.aspx.designer.cs">
+      <DependentUpon>RegisterDetailA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterS.aspx.cs">
+      <DependentUpon>RegisterS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RegisterS.aspx.designer.cs">
+      <DependentUpon>RegisterS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\RewardHistory.aspx.cs">
+      <DependentUpon>RewardHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\RewardHistory.aspx.designer.cs">
+      <DependentUpon>RewardHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadNew.aspx.cs">
+      <DependentUpon>DownloadNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadNew.aspx.designer.cs">
+      <DependentUpon>DownloadNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadDocument.aspx.cs">
+      <DependentUpon>DownloadDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadDocument.aspx.designer.cs">
+      <DependentUpon>DownloadDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadManual.aspx.designer.cs">
+      <DependentUpon>DownloadManual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadPresent.aspx.cs">
+      <DependentUpon>DownloadPresent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadPresent.aspx.designer.cs">
+      <DependentUpon>DownloadPresent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DownloadManual.aspx.cs">
+      <DependentUpon>DownloadManual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\PointDetail.aspx.cs">
+      <DependentUpon>PointDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\PointDetail.aspx.designer.cs">
+      <DependentUpon>PointDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderContractor1.aspx.cs">
+      <DependentUpon>OrderContractor1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderContractor1.aspx.designer.cs">
+      <DependentUpon>OrderContractor1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgent1.aspx.cs">
+      <DependentUpon>OrderSubAgent1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderSubAgent1.aspx.designer.cs">
+      <DependentUpon>OrderSubAgent1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DNARewardsDealer.aspx.cs">
+      <DependentUpon>DNARewardsDealer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DNARewardsDealer.aspx.designer.cs">
+      <DependentUpon>DNARewardsDealer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\DNARewardsRetailCustomers .aspx.cs">
+      <DependentUpon>DNARewardsRetailCustomers .aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\DNARewardsRetailCustomers .aspx.designer.cs">
+      <DependentUpon>DNARewardsRetailCustomers .aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderListMenu.aspx.cs">
+      <DependentUpon>OrderListMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderListMenu.aspx.designer.cs">
+      <DependentUpon>OrderListMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwner.aspx.cs">
+      <DependentUpon>OrderOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\OrderOwner.aspx.designer.cs">
+      <DependentUpon>OrderOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\Register2.aspx.cs">
+      <DependentUpon>Register2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Register2.aspx.designer.cs">
+      <DependentUpon>Register2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuRegister.aspx.cs">
+      <DependentUpon>MenuRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuRegister.aspx.designer.cs">
+      <DependentUpon>MenuRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\Signon.aspx.cs">
+      <DependentUpon>Signon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\Signon.aspx.designer.cs">
+      <DependentUpon>Signon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\StockList.aspx.cs">
+      <DependentUpon>StockList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\StockList.aspx.designer.cs">
+      <DependentUpon>StockList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontWeb\MenuSubAgentReseller.aspx.cs">
+      <DependentUpon>MenuSubAgentReseller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontWeb\MenuSubAgentReseller.aspx.designer.cs">
+      <DependentUpon>MenuSubAgentReseller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60976</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1605/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

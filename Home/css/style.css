@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+body,html{margin:0; padding:0;}
+#container{width:1500px; float:none; margin:auto;}
+.padding0{padding:0 !important;}
+.paddingTop15px{padding-top:15px;}
+.marginLeft15Minus{margin-left:-15px;}
+.loginBlock{ background:#059e49;}
+.whitebg{background:#FFF;}
+.icon_register{padding:20px; font-size:60px; color:#059e49;}
